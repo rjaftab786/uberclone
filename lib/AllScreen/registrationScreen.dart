@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rider_app/AllScreen/registrationScreen.dart';
+import 'package:rider_app/AllScreen/loginScreen.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const String idScreen = 'login';
+class RegistrationScreen extends StatelessWidget {
+  static const String idScreen = 'register';
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 1.0),
               Text(
-                'Login as Rider',
+                'Register as a Rider',
                 style: TextStyle(fontSize: 24.0, fontFamily: 'Brand Bold'),
                 textAlign: TextAlign.center,
               ),
@@ -32,9 +32,31 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     SizedBox(height: 1.0),
                     TextField(
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        labelText: 'Name',
+                        labelStyle: TextStyle(fontSize: 14.0),
+                        hintStyle:
+                            TextStyle(color: Colors.grey, fontSize: 10.0),
+                      ),
+                      style: TextStyle(fontSize: 14.0),
+                    ),
+                    SizedBox(height: 1.0),
+                    TextField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: 'Email',
+                        labelStyle: TextStyle(fontSize: 14.0),
+                        hintStyle:
+                            TextStyle(color: Colors.grey, fontSize: 10.0),
+                      ),
+                      style: TextStyle(fontSize: 14.0),
+                    ),
+                    SizedBox(height: 1.0),
+                    TextField(
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        labelText: 'Phone',
                         labelStyle: TextStyle(fontSize: 14.0),
                         hintStyle:
                             TextStyle(color: Colors.grey, fontSize: 10.0),
@@ -59,27 +81,24 @@ class LoginScreen extends StatelessWidget {
                             MaterialStateProperty.all(Colors.yellow),
                       ),
                       onPressed: () {
-                        print('Login');
+                        print('Login Button Clicked');
                       },
                       child: Text(
-                        'Login Button Clicked',
+                        'Create Account',
                         style: TextStyle(
                             fontSize: 10.0,
                             fontFamily: "Brand-Bold",
                             color: Colors.blue),
                       ),
                     ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, LoginScreen.idScreen, (route) => false);
+                      },
+                      child: Text('Already have an account? Login Here'),
+                    ),
                   ],
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, RegistrationScreen.idScreen, (route) => false);
-                },
-                child: Text(
-                  "Don/t have an Account? Register Here",
-                  style: TextStyle(color: Colors.black),
                 ),
               ),
             ],
