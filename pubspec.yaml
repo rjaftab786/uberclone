@@ -15,6 +15,7 @@ dependencies:
   firebase_auth: ^3.0.1
   firebase_core: ^1.4.0
   firebase_database: ^7.1.2
+  fluttertoast: ^8.0.7
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -26,13 +27,13 @@ flutter:
 
 fonts:
   - family: Signatra
-    fonts:
+    fonts: null
   - asset: fonts/Signatra.ttf
 
   - family: Brand-Regular
-    fonts:
+    fonts: null
   - asset: fonts/bolt-regular.ttf
 
   - family: Brand-Regular
-    fonts:
+    fonts: null
   - asset: fonts/bolt-semibold.ttf

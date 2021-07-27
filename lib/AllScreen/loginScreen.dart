@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
                         print('Login');
                       },
                       child: Text(
-                        'Login Button Clicked',
+                        'Login ',
                         style: TextStyle(
                             fontSize: 10.0,
                             fontFamily: "Brand-Bold",
